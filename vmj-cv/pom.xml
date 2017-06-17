@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>fine.vmj</groupId>
+		<artifactId>vmj</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../vmj/pom.xml</relativePath>
+	</parent>
+	<groupId>fine.vmj.cv</groupId>
+	<artifactId>vmj-cv</artifactId>
+	<name>vmj-cv</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>fine.vmj.common</groupId>
+			<artifactId>vmj-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>fine.vmj.store</groupId>
+			<artifactId>vmj-store</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.opencv</groupId>
+			<artifactId>opencv-320</artifactId>
+			<version>3.2.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/lib/opencv-320.jar</systemPath>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.10 -->
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.10</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<argLine>-Djava.library.path=${project.basedir}/src/main/lib:${java.library.path}</argLine>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
