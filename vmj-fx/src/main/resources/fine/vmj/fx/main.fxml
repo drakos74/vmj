@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fine.vmj.fx.FXMainController">
+	<bottom>
+		<Button fx:id="s_btn" mnemonicParsing="false" onAction="#startCamera" text="Start" BorderPane.alignment="CENTER">
+			<BorderPane.margin>
+				<Insets bottom="10.0" />
+			</BorderPane.margin>
+		</Button>
+	</bottom>
+	<center>
+		<ImageView fx:id="c_feed" fitHeight="230.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT" />
+	</center>
+	<right>
+		<VBox alignment="CENTER_RIGHT" prefHeight="364.0" prefWidth="149.0" BorderPane.alignment="CENTER">
+			<children>
+				<HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+					<children>
+						<CheckBox fx:id="cl_haar" mnemonicParsing="false" onAction="#haarSelected" text="HAAR_CL" />
+						<CheckBox fx:id="cl_lbp" mnemonicParsing="false" onAction="#lbpSelected" text="LBP_CL" />
+						<CheckBox fx:id="dft_inv" mnemonicParsing="false" text="DFT" />
+					</children>
+				</HBox>
+				<HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+					<children>
+						<CheckBox fx:id="greyscale" mnemonicParsing="false" text="greyscale" />
+						<CheckBox fx:id="img" mnemonicParsing="false" onAction="#loadImg" text="logo_bubble" />
+					</children>
+				</HBox>
+				<HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="200.0">
+					<children>
+						<CheckBox fx:id="edge_detect" mnemonicParsing="false" text="edgeDetect" />
+						<CheckBox fx:id="obj_map" mnemonicParsing="false" text="BackGroundRemove" />
+						<CheckBox fx:id="obj_map_inverse" mnemonicParsing="false" text="Inverse" />
+						<Slider fx:id="threshold" onDragDone="#thresholdChange" />
+					</children>
+				</HBox>
+            	<HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="morphImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label text="Mask" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fx:id="maskImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label text="Edges" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                     	<ImageView fx:id="hsvImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label text="hsvImage" />
+                     </children>
+                  </VBox>
+   				<VBox prefHeight="150.0" prefWidth="150.0">
+   					<children>
+                        <CheckBox fx:id="obj_detect" mnemonicParsing="false" text="ObjectDetectOn" />
+   						<Label text="Hue Start" />
+   						<Slider fx:id="hueStart" blockIncrement="1" max="180" min="0" value="20" />
+   						<Label text="Hue Stop" />
+   						<Slider fx:id="hueStop" blockIncrement="1" max="180" min="0" value="50" />
+   						<Label text="Saturation Start" />
+   						<Slider fx:id="saturationStart" blockIncrement="1" max="255" min="0" value="60" />
+   						<Label text="Saturation Stop" />
+   						<Slider fx:id="saturationStop" blockIncrement="1" max="255" min="0" value="200" />
+   						<Label text="Value Start" />
+   						<Slider fx:id="valueStart" blockIncrement="1" max="255" min="0" value="50" />
+   						<Label text="Value Stop" />
+   						<Slider fx:id="valueStop" blockIncrement="1" max="255" min="0" value="255" />
+                        <Label fx:id="hsvCurrentValues" />
+   
+   					</children>
+   				</VBox>
+                  
+               </children>
+				</HBox>
+				<HBox prefHeight="100.0" prefWidth="200.0">
+					<children>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Object" />
+      						<ImageView fx:id="o_feed" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="c_sample" />
+      						<ImageView fx:id="c_sample" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Histogram" />
+      						<ImageView fx:id="c_hist" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="b_sample" />
+                        <ImageView fx:id="b_sample" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </VBox>
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+	</right>
+</BorderPane>

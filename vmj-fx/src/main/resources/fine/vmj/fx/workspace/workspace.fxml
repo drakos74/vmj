@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.5236768802228412" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fine.vmj.fx.workspace.Workspace_Controller">
+	<items>
+		<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+			<children>
+				<SplitPane dividerPositions="0.5633802816901409" layoutX="-1.0" layoutY="1.0" prefHeight="372.0" prefWidth="1280.0">
+					<items>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="365.0" prefWidth="858.0">
+							<children>
+								<ImageView fx:id="screen" fitHeight="372.0" fitWidth="846.0" pickOnBounds="true" preserveRatio="true" />
+							</children>
+						</AnchorPane>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="363.0" prefWidth="412.0">
+							<children>
+								<VBox layoutY="6.0" prefHeight="366.0" prefWidth="554.0">
+									<children>
+										<HBox prefHeight="100.0" prefWidth="200.0">
+											<children>
+												<Button fx:id="m_btn" mnemonicParsing="false" onAction="#doStart" text="Start" />
+												<ImageView fx:id="c_hist" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                                    <VBox prefHeight="150.0" prefWidth="358.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label text="trackedFrames " />
+                                                <Label fx:id="tracked_frames" text="{tracked_frames}" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label text="replacedFrames " />
+                                                <Label fx:id="replaced_frames" text="{replaced_frames}" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <Label text="matchedFrames " />
+                                                <Label fx:id="matched_frames" text="{matched_frames}" />
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" />
+                                                <VBox prefHeight="200.0" prefWidth="100.0" />
+                                             </children>
+                                          </HBox>
+                                       </children></VBox>
+											</children>
+										</HBox>
+										<HBox prefHeight="100.0" prefWidth="508.0">
+											<children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <CheckBox fx:id="do_edgeDetect" mnemonicParsing="false" text="edgeDetect" />
+                                          <Slider fx:id="edgeThreshold" value="20.0" />
+                                          <Label fx:id="edge_threshold" />
+                                       </children>
+                                    </VBox>
+                                    <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <CheckBox fx:id="do_objDetect" mnemonicParsing="false" text="objDetect" />
+                                          <Label fx:id="edge_threshold1" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="100.0" prefWidth="355.0">
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <HBox prefHeight="17.0" prefWidth="355.0">
+                                                   <children>
+                                                      <Label text="blurKernelRatio" />
+                                                      <Label fx:id="blurKernelRatioValue" />
+                                                   </children>
+                                                </HBox>
+                                                <Slider fx:id="blurKernelRatio" min="1.0" value="3.0" />
+                                                <HBox prefHeight="18.0" prefWidth="355.0">
+                                                   <children>
+                                                      <Label text="greyBlurKernel" />
+                                                      <Label fx:id="greyBlurKernelSizeValue" />
+                                                   </children>
+                                                </HBox>
+                                                <Slider fx:id="greyBlurKernelSize" min="1.0" />
+                                             </children>
+                                          </VBox>
+                                          <HBox prefHeight="18.0" prefWidth="355.0">
+                                             <children>
+                                                <Label text="colorBlurKernel" />
+                                                <Label fx:id="colorBlurKernelSizeValue" />
+                                             </children>
+                                          </HBox>
+                                          <Slider fx:id="colorBlurKernelSize" min="1.0" value="7.0" />
+                                       </children>
+                                    </VBox>
+											</children>
+										</HBox>
+									</children>
+								</VBox>
+							</children>
+						</AnchorPane>
+					</items>
+				</SplitPane>
+			</children>
+		</AnchorPane>
+		<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+			<children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+      						<VBox prefHeight="234.0" prefWidth="200.0">
+      							<children>
+      								<Label text="edgeImage" />
+      								<ImageView fx:id="edgeImage" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+      							</children>
+      						</VBox>
+      						<VBox prefHeight="234.0" prefWidth="200.0">
+      							<children>
+      								<Label text="cascadeImage" />
+      								<ImageView fx:id="cascadeImage" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+      							</children>
+      						</VBox>
+                        <VBox prefHeight="234.0" prefWidth="200.0">
+                           <children>
+                              <Label text="objImage" />
+                              <ImageView fx:id="objImage" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="234.0" prefWidth="200.0">
+                           <children>
+                              <Label text="trackImage" />
+                              <ImageView fx:id="trackImage" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+      						<VBox prefHeight="234.0" prefWidth="200.0">
+      							<children>
+      								<Label text="processedImage" />
+      								<ImageView fx:id="processedImage" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+      							</children>
+      						</VBox>
+                        <VBox prefHeight="234.0" prefWidth="200.0">
+                           <children>
+                              <Label text="demoImage" />
+                              <ImageView fx:id="demoImage" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+      				<HBox prefHeight="234.0" prefWidth="1280.0">
+      					<children>
+                        <VBox prefHeight="234.0" prefWidth="200.0">
+                           <children>
+                              <Label text="pr_frame_1" />
+                              <ImageView fx:id="pr_frame_1" fitHeight="121.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+      						<VBox prefHeight="234.0" prefWidth="200.0">
+      							<children>
+      								<Label text="pr_frame_2" />
+      								<ImageView fx:id="pr_frame_2" fitHeight="121.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+      							</children>
+      						</VBox>
+      						<VBox prefHeight="234.0" prefWidth="200.0">
+      							<children>
+      								<Label text="pr_frame_3" />
+      								<ImageView fx:id="pr_frame_3" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+      							</children>
+      						</VBox>
+      						<VBox prefHeight="234.0" prefWidth="200.0">
+      							<children>
+      								<Label text="pr_frame_4" />
+      								<ImageView fx:id="pr_frame_4" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+      							</children>
+      						</VBox>
+                        <VBox prefHeight="234.0" prefWidth="200.0">
+                           <children>
+                              <Label text="pr_frame_5" />
+                              <ImageView fx:id="pr_frame_5" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="234.0" prefWidth="200.0">
+                           <children>
+                              <Label text="pr_frame_6" />
+                              <ImageView fx:id="pr_frame_6" fitHeight="155.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </VBox>
+      					</children>
+      				</HBox>
+               </children>
+            </VBox>
+			</children>
+		</AnchorPane>
+	</items>
+</SplitPane>
